@@ -1,9 +1,9 @@
-Notifier - Mail
-===============
+Notifier - HipChat
+==================
 
 This library adds standard php mail integration to [Notifier](https://github.com/Notifier/Notifier).
 
-[![Build Status](https://secure.travis-ci.org/Notifier/Mail.png)](https://travis-ci.org/Notifier/Mail)
+[![Build Status](https://secure.travis-ci.org/Notifier/HipChat.png)](https://travis-ci.org/Notifier/HipChat)
 
 ## Contributing
 
@@ -18,7 +18,7 @@ This library adds standard php mail integration to [Notifier](https://github.com
 > which we borrowed from Symfony.
 > Make sure to check out [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer) as this will help you a lot.
 
-If you would like to help take a look at the [list of issues](http://github.com/Notifier/Mail/issues).
+If you would like to help take a look at the [list of issues](http://github.com/Notifier/HipChat/issues).
 
 ## Requirements
 
@@ -28,7 +28,7 @@ If you would like to help take a look at the [list of issues](http://github.com/
 
 Dries De Peuter - <dries@nousefreak.be> - <http://nousefreak.be>
 
-See also the list of [contributors](https://github.com/Notifier/Mail/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Notifier/HipChat/contributors) who participated in this project.
 
 ## License
 
