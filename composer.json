@@ -1,0 +1,33 @@
+{
+    "name": "notifier/hipchat",
+    "type": "library",
+    "description": "Notifier channel for HipChat.",
+    "keywords": ["notifier", "notification", "messages", "HipChat"],
+    "homepage": "https://github.com/Notifier/Notifier",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dries De Peuter",
+            "email": "dries@nousefreak.be",
+            "homepage": "http://nousefreak.be"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "notifier/notifier": "~2.0@dev",
+        "gorkalaucirica/hipchat-v2-api-client": "1.3.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Notifier\\HipChat\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Notifier\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
