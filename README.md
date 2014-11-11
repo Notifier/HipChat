@@ -1,9 +1,14 @@
 Notifier - HipChat
 ==================
 
-This library adds standard php mail integration to [Notifier](https://github.com/Notifier/Notifier).
-
 [![Build Status](https://secure.travis-ci.org/Notifier/HipChat.png)](https://travis-ci.org/Notifier/HipChat)
+[![Latest Stable Version](https://poser.pugx.org/notifier/hipchat/v/stable.svg)](https://packagist.org/packages/notifier/hipchat)
+[![Total Downloads](https://poser.pugx.org/notifier/hipchat/downloads.svg)](https://packagist.org/packages/notifier/hipchat)
+[![Latest Unstable Version](https://poser.pugx.org/notifier/hipchat/v/unstable.svg)](https://packagist.org/packages/notifier/hipchat)
+[![Dependency Status](https://www.versioneye.com/user/projects/54615cb6a23e414042000007/badge.svg)](https://www.versioneye.com/user/projects/54615cb6a23e414042000007)
+[![License](https://poser.pugx.org/notifier/hipchat/license.svg)](https://packagist.org/packages/notifier/hipchat)
+
+This library adds HipChat integration to [Notifier](https://github.com/Notifier/Notifier).
 
 ## Contributing
 
