@@ -22,8 +22,8 @@
     </filter>
 
     <php>
-        <env name="HIPCHAT_APIKEY" value=""/>
-        <env name="HIPCHAT_ROOM_ID" value=""/>
-        <env name="HIPCHAT_USER" value=""/>
+        <env name="HIPCHAT_APIKEY"/>
+        <env name="HIPCHAT_ROOM_ID"/>
+        <env name="HIPCHAT_USER"/>
     </php>
 </phpunit>
