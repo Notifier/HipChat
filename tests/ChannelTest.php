@@ -27,7 +27,7 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->channel = new HipChatChannel($_ENV['HIPCHAT_APIKEY']);
+        $this->channel = new HipChatChannel(getenv('HIPCHAT_APIKEY'));
     }
 
     public function tearDown()
@@ -58,7 +58,7 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
         $message = new Message(new Type());
         $message->hipchat_message = 'test';
         $recipient = new Recipient();
-        $recipient->hipchat_room = $_ENV['HIPCHAT_ROOM_ID'];
+        $recipient->hipchat_room = getenv('HIPCHAT_ROOM_ID');
 
         $this->channel->send($message, $recipient);
     }
@@ -68,7 +68,7 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
         $message = new Message(new Type());
         $message->hipchat_message = 'test';
         $recipient = new Recipient();
-        $recipient->hipchat_user = $_ENV['HIPCHAT_USER'];
+        $recipient->hipchat_user = getenv('HIPCHAT_USER');
 
         $this->channel->send($message, $recipient);
     }
