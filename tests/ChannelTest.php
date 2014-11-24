@@ -11,6 +11,8 @@
 namespace Notifier\Tests;
 
 use Notifier\HipChat\HipChatChannel;
+use Notifier\HipChat\HipChatMessage;
+use Notifier\HipChat\HipChatRecipient;
 use Notifier\Message\Message;
 use Notifier\Recipient\Recipient;
 use Notifier\Tests\Stubs\Type;
@@ -38,7 +40,7 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
     public function testIsHandlingFail()
     {
         $message = new Message(new Type());
-        $recipient = new Recipient();
+        $recipient = new Recipient(1);
 
         $this->assertFalse($this->channel->isHandling($message, $recipient));
     }
@@ -46,9 +48,14 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
     public function testIsHandlingSuccess()
     {
         $message = new Message(new Type());
-        $message->hipchat_message = 'test';
-        $recipient = new Recipient();
-        $recipient->hipchat_room = 'test';
+
+        $hipchatMessage = new HipChatMessage();
+        $hipchatMessage->setMessage('test message');
+        $hipchatMessage->setRoom('test');
+
+        $message->setFormattedMessage($hipchatMessage);
+
+        $recipient = new Recipient(1);
 
         $this->assertTrue($this->channel->isHandling($message, $recipient));
     }
@@ -56,9 +63,17 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
     public function testSendRoom()
     {
         $message = new Message(new Type());
-        $message->hipchat_message = 'test';
-        $recipient = new Recipient();
-        $recipient->hipchat_room = getenv('HIPCHAT_ROOM_ID');
+
+        $hipchatMessage = new HipChatMessage();
+        $hipchatMessage->setMessage('test message');
+        $hipchatMessage->setRoom(getenv('HIPCHAT_ROOM_ID'));
+        $message->setFormattedMessage($hipchatMessage);
+
+        $recipient = new Recipient(1);
+
+        $hipchatRecipient = new HipChatRecipient();
+        $hipchatRecipient->setRoom(getenv('HIPCHAT_ROOM_ID'));
+        $recipient->addFormattedRecipient($hipchatRecipient);
 
         $this->channel->send($message, $recipient);
     }
@@ -66,9 +81,15 @@ class ChannelTest extends \PHPUnit_Framework_TestCase
     public function testSendUser()
     {
         $message = new Message(new Type());
-        $message->hipchat_message = 'test';
-        $recipient = new Recipient();
-        $recipient->hipchat_user = getenv('HIPCHAT_USER');
+
+        $hipchatMessage = new HipChatMessage();
+        $hipchatMessage->setMessage('test message');
+        $message->setFormattedMessage($hipchatMessage);
+
+        $recipient = new Recipient(1);
+        $hipchatRecipient = new HipChatRecipient();
+        $hipchatRecipient->setUser(getenv('HIPCHAT_USER'));
+        $recipient->addFormattedRecipient($hipchatRecipient);
 
         $this->channel->send($message, $recipient);
     }
